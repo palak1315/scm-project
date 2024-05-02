@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Google Home Page</title>
+    <link rel="stylesheet" type="text/css" href="scm project.css" media="screen">
+    <style>
+        .history-container {
+            display: none;
+            margin-top: 10px;
+        }
+
+        #search-input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+     
+    <header>
+        <nav>
+            <ul id="nav_bar">
+                <li class="nav-links" id="Gmail">
+                    <a href="https://twitter.com/">Twitter</a></li>
+                <li class="nav-links" > <a href="https://www.sonsaur.com/?gclid=Cj0KCQiA35urBhDCARIsAOU7Qwl3D-SJKix1w3BtGVKmZl8GhDEQKZwJgMM_891AaropI0v11vrLUM0aAhpcEALw_wcB">Games</a></li>
+                <button><a href="https://myaccount.google.com/?utm_source=sign_in_no_continue&pli=1">Profile</a></button>
+            </ul>
+        </nav>
+    </header>
+    <div class="google">
+        <a href="" id="google_logo"><img src="C:\Users\HP\OneDrive\Desktop\logo2.jpg" alt="waite"></a>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search Google">
+            <br>
+            <button onclick="performSearch()">Search</button>
+            <button onclick="toggleHistory()">Show History</button>
+            <div class="history-container" id="history-container">
+                <h2>Search History</h2>
+                <ul id="historyList"></ul>
+            </div>
+        </div>
+    </div>
+     
+    <script>
+        // Function to perform search
+        function performSearch() {
+            var searchTerm = document.getElementById("search-input").value;
+
+            if (searchTerm.trim() !== '') {
+                // Retrieve existing search history from local storage
+                var searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+
+                // Add the search term to the history array
+                searchHistory.push(searchTerm);
+
+                // Update the search history display
+                updateHistoryList(searchHistory);
+
+                // Store the updated search history in local storage
+                localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
+
+                // Redirect to Google with the search term
+                window.location.href = "https://www.google.com/search?q=" + encodeURIComponent(searchTerm);
+
+                // Clear the search input
+                document.getElementById("search-input").value = '';
+            }
+        }
+
+        // Function to update the search history display
+        function updateHistoryList(searchHistory) {
+            var historyList = document.getElementById("historyList");
+            // Clear existing history
+            historyList.innerHTML = '';
+
+            searchHistory.forEach(function (term) {
+                var listItem = document.createElement("li");
+                listItem.textContent = term;
+                historyList.appendChild(listItem);
+            });
+        }
+
+        // Function to toggle the visibility of search history
+        function toggleHistory() {
+            var historyContainer = document.getElementById('history-container');
+            historyContainer.style.display = (historyContainer.style.display === 'none' || historyContainer.style.display === '') ? 'block' : 'none';
+        }
+
+        // Load and display search history on page load
+        window.onload = function() {
+            var searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+            updateHistoryList(searchHistory);
+        };
+    </script>
+
+    <footer>
+        <ul class="footer-left">
+            <li><a href=""> Home;)</a></li>
+            <li><a href="https://www.chitkara.edu.in/">  College;|</a></li>
+            <li><a href= "https://en.wikipedia.org/wiki/Google_Search" title="google history"> About</a></li>
+        </ul>
+        <ul class="footer-right">
+            <li><a href="https://safety.google/security-privacy/"> Its My Privacy</a></li>
+            <li><a href="https://meet.google.com/?pli=1" title="google meet"> Meet</a></li>
+            <li><a href="https://support.google.com/accounts/answer/3118621?hl=en"> S.E.T.T.I.N.G</a></li>
+        </ul>
+    </footer>
+ 
+</body>
+</html>

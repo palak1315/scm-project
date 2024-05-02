@@ -1,0 +1,148 @@
+body{
+    margin:0;
+    padding:0;
+    font-family :'Roboto', sans-serif;
+    background-color:  Papayawhip;
+}
+header{
+    width: 100%;
+}
+ul{
+    list-style: none;
+}
+#nav_bar{
+    float: right;
+    padding-bottom: 10px;
+}
+#nav_bar li{
+    display: inline-block;
+    padding: 8px;
+}
+#nav_bar  button  {
+    background-color: #4887ef;
+    margin-right: 25px;
+    padding: 7px 15px;
+    border-radius: 3px;
+    font-weight: bold;
+    border: white;
+    box-shadow: 1px 1px 5px #999 ;
+    color: white;
+
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+li.nav-links a:hover{
+    text-decoration: underline;
+
+}
+.google #google_logo{
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    clear: both;
+    padding-top: 112px;
+    padding-bottom: 20px;
+}
+.search-container{
+    text-align: center;
+}
+#search-input{
+    width: 450px;
+    line-height: 32px;
+    padding: 20px 10px;
+}
+#search-input{
+    padding: 0px 8px;
+}
+.search-container:hover{
+    border-color: #e4e4e4;
+    padding-top: 0;
+}
+.buttons{
+    text-align: center;
+    padding-top: 30px;
+    margin-bottom: 300px;
+}
+footer{
+    background: #f2f2f2;
+    border-top: solid 2px #e4e4e4;
+    position: fixed;
+    bottom: 0;
+    padding: bottom;
+    width: 100%;
+}
+footer ul li{
+    display: inline;
+    color: #666666;
+    font-size: 13px;
+    padding: 13px;
+}
+footer ul{
+    float: left;
+    padding: 1px;
+}
+footer ul a:hover {
+    text-decoration: underline;
+}
+.footer-right{
+    float: right;
+}
+.search-container{
+    text-align: center;
+}
+#searchInput{
+    width: 450px;
+    line-height: 32px;
+    padding: 20px 10px;
+    padding: 0px 8px;
+}
+  
+.search-container button{
+    text-align: center;
+    border-radius: 10%;
+    margin-bottom: 30px;
+    size: 80px;
+    padding: 7px 15px;
+    border-radius: 3px;
+    font-weight: bold;
+    margin-top: 15px;
+    box-shadow: 1px 1px 5px #999 ;
+    margin-right: 10px;
+    box-sizing: border-box;
+}
+/* .history-container{
+     
+    text-align: right;
+    top: 30px;
+} */
+.history-container {
+    text-align: center;
+    margin-top: 40px;
+    position: fixed;
+    top: 30px;
+    right: 10px;
+    max-width: 200px; /* Adjust the width as needed */
+    background-color: Papayawhip;
+    padding: 0px ;;
+    border: 1px solid Papayawhip;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-style: italic;
+}
+
+.history-container h2 {
+    margin-bottom:20px;
+    margin-top: 4px;
+}
+
+.history-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.history-container li {
+    margin-bottom: 5px;
+}
